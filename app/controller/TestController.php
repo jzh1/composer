@@ -5,6 +5,6 @@ class TestController{
 
     public function test()
     {
-        echo 'test controller';
+        echo array_test().'test controller';
     }
 }
