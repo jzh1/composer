@@ -1,4 +1,4 @@
-#框架使用
+# 框架介绍
 
 ## 框架使用package
 
@@ -26,3 +26,7 @@ medoo
 ## 版本使用限制
 PHP >= 7.2
 
+## 优化方向
+
+### 代码结构分层 model repository service controller view 
+### 代码开始运行环境检查，避免运行中因为环境问题运行失败
