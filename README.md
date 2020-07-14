@@ -22,6 +22,10 @@ medoo
 
 官方使用介绍地址： https://packagist.org/packages/catfan/medoo
 
+### http请求
+guzzle
+
+官方使用介绍地址： https://packagist.org/packages/guzzlehttp/guzzle
 
 ## 二、版本使用限制
 PHP >= 7.2
