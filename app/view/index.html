@@ -8,12 +8,13 @@
 
 <h1>这是视图模版前端文件</h1>
 <h2>{{var}}</h2>
-
-{% for user in users %}
-* {{ user }}
-{% else %}
-No users have been found.
-{% endfor %}
+<ul>
+    {% for user in users %}
+    <li>{{ user.name }}</li>
+    {% else %}
+    No users have been found.
+    {% endfor %}
+</ul>
 
 </body>
 </html>

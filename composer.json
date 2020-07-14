@@ -2,11 +2,13 @@
     "require": {
         "monolog/monolog": "^2.1",
         "noahbuscher/macaw": "dev-master",
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "catfan/medoo": "^1.7"
     },
     "autoload": {
         "psr-4": {
-            "controller\\":"app/controller"
+            "controller\\":"app/controller",
+            "model\\":"app/model"
         },
         "files": [
             "app/helpers/helpers.php"
