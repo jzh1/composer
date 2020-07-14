@@ -2,11 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>index de view</title>
+    <title>{{title}}</title>
 </head>
 <body>
 
 <h1>这是视图模版前端文件</h1>
 <h2>{{var}}</h2>
+
+{% for user in users %}
+* {{ user }}
+{% else %}
+No users have been found.
+{% endfor %}
+
 </body>
 </html>
