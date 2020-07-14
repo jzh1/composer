@@ -6,3 +6,14 @@ if (!function_exists('array_test')){
         return 111;
     }
 }
+
+function dd(...$args)
+{
+    http_response_code(500);
+
+    foreach ($args as $x) {
+        var_dump($x);
+    }
+
+    die(1);
+}
