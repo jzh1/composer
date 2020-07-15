@@ -32,9 +32,14 @@ class BaseController{
     }
 
     // 成功的调用方法
-    public function success()
+    public function success($data)
     {
-        echo 'success';
+        if (is_array($data)){
+            echo  json_encode($data,JSON_UNESCAPED_UNICODE);
+            die();
+        }
+
+        echo  'error';die();
     }
 
     // 失败的调用方法
