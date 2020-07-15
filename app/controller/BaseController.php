@@ -32,10 +32,15 @@ class BaseController{
     }
 
     // 成功的调用方法
-    public function success($data)
+    public function success($data,$message)
     {
-        if (is_array($data)){
-            echo  json_encode($data,JSON_UNESCAPED_UNICODE);
+        header('Content-Type:application/json; charset=utf-8');
+
+        $returnData['code'] = 200;
+        $returnData['message'] = $message;
+        $returnData['data'] = $data;
+        if (is_array($returnData)){
+            echo  json_encode($returnData,JSON_UNESCAPED_UNICODE);
             die();
         }
 
@@ -43,8 +48,18 @@ class BaseController{
     }
 
     // 失败的调用方法
-    public function error()
+    public function error($data,$message)
     {
+        header('Content-Type:application/json; charset=utf-8');
+        $returnData['code'] = 400;
+        $returnData['message'] = $message;
+        $returnData['data'] = $data;
+        if (is_array($returnData)){
+            echo  json_encode($returnData,JSON_UNESCAPED_UNICODE);
+            die();
+        }
+
         echo 'error';
+        die();
     }
 }
