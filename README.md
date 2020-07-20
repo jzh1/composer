@@ -13,6 +13,12 @@ macaw
 
 官方使用介绍地址：https://packagist.org/packages/noahbuscher/macaw
 
+#### 扩展包分析
+##### 1 在首页文件引入 
+##### 2 然后中间写符合规格的结构化请求方法（静态方法，会把所有结构化数据放到一个array中）
+##### 3 最后调用display方法（获取请求路径然后和路由文件中方法匹配）
+##### 4 匹配成功会实例相应的controller 然后调用类中的 function 返回
+
 ### 视图package
 twig
 
@@ -38,6 +44,6 @@ PHP >= 7.2
 
 ## 三、优化方向
 
-1、代码结构分层 model repository service controller view 
-2、代码开始运行环境检查，避免运行中因为环境问题运行失败
-3、返回结构规整
+##### 1、代码结构分层 model repository service controller view 
+##### 2、代码开始运行环境检查，避免运行中因为环境问题运行失败
+##### 3、返回结构规整
