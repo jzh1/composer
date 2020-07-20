@@ -4,7 +4,8 @@
         "noahbuscher/macaw": "dev-master",
         "twig/twig": "^3.0",
         "catfan/medoo": "^1.7",
-        "guzzlehttp/guzzle": "^7.0"
+        "guzzlehttp/guzzle": "^7.0",
+        "predis/predis": "^1.1"
     },
     "autoload": {
         "psr-4": {

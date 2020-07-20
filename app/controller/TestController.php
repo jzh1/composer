@@ -8,7 +8,7 @@ class TestController{
 
     public function test()
     {
-        return [11,122,222,22];
+        echo  '<<<<<<<<<<<<<<<<<<<<<<<<<<<< test-controller-return>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>';
     }
 
     public function httpRequest()
