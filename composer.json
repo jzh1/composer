@@ -1,4 +1,20 @@
 {
+    "name": "jzh/composerSimpleFramework",
+    "description": "The Simple Framework.",
+    "keywords": [
+        "framework",
+        "composerSimpleFramework"
+    ],
+    "authors": [
+        {
+            "name": "zhaohui.jiang",
+            "email": "949363409@qq.com",
+            "homepage": "vvup.net",
+            "role": "Developer"
+        }
+    ],
+
+    "license": "MIT",
     "require": {
         "monolog/monolog": "^2.1",
         "noahbuscher/macaw": "dev-master",
