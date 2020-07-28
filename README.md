@@ -1,5 +1,9 @@
 # 框架介绍
-模仿laravel， 功能 服务 组件化
+##### 模仿laravel， 功能 服务 组件化
+##### 1 规范目录结构，设置目录用途
+##### 2 设置nginx 访问index.php文件
+##### 3 composer require 指定包完成初始化
+##### 4 设置 git 忽略文件
 
 ## 一、框架使用package
 
