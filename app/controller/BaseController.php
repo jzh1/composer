@@ -32,7 +32,7 @@ class BaseController{
     }
 
     // 成功的调用方法
-    public function success($data,$message)
+    public function success($data,$message = 'success')
     {
         header('Content-Type:application/json; charset=utf-8');
 
