@@ -9,8 +9,8 @@ class BaseDao extends Medoo{
     {
         $options=[
             'database_type' => 'mysql',
-            'database_name' => 'erp',
-            'prefix' => 'erp_',
+            'database_name' => 'blog',
+            'prefix' => 'blog_',
             'server' => 'localhost',
             'username' => 'root',
             'password' => 'Admin.123456'

@@ -7,6 +7,17 @@ use NoahBuscher\Macaw\Macaw;
     echo 'this is /';
 });*/
 
+
+// 后台路径
+$backstage = 'admin/';
+// 用户管理
+$user = $backstage.'user/';
+// 文章管理
+$user = $backstage.'user/';
+
+
+Macaw::post('login', 'controller\LoginController@login');
+
 // 测试
 Macaw::get('test', 'controller\TestController@test');
 // http 请求测试
@@ -19,3 +30,5 @@ Macaw::get('getUserList', 'controller\IndexController@getUserList');
 Macaw::get('user', 'controller\UserController@test');
 
 Macaw::dispatch();
+
+

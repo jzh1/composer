@@ -5,6 +5,9 @@ class BaseController{
 
     protected $twig;
     protected $data = [];
+    public $getParams = [];
+    public $postParams = [];
+    public $requestParams = [];
 
     // 构造方法
     public function __construct()
@@ -13,6 +16,8 @@ class BaseController{
         $this->twig = new \Twig\Environment($loader, [
             // 'cache' => '/path/to/compilation_cache',
         ]);
+
+        $this->params();
     }
 
     // 模版赋值
@@ -61,5 +66,12 @@ class BaseController{
 
         echo 'error';
         die();
+    }
+
+    // 获取参数
+    public function params(){
+        $this->getParams = $_GET;
+        $this->postParams = $_POST;
+        $this->requestParams = array_merge($this->getParams,$this->postParams);
     }
 }
