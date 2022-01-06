@@ -9,7 +9,7 @@
         {
             "name": "zhaohui.jiang",
             "email": "949363409@qq.com",
-            "homepage": "vvup.net",
+            "homepage": "http://vvup.net",
             "role": "Developer"
         }
     ],
@@ -26,7 +26,8 @@
     "autoload": {
         "psr-4": {
             "controller\\":"app/controller",
-            "model\\":"app/model"
+            "model\\":"app/model",
+            "service\\":"app/service"
         },
         "files": [
             "app/helpers/helpers.php"

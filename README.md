@@ -41,7 +41,7 @@ guzzle
 ### redis使用
 redis
 
-官方使用介绍地址： https://packagist.org/packages/guzzlehttp/guzzle
+官方使用介绍地址： https://packagist.org/packages/predis/predis
 
 ## 二、版本使用限制
 PHP >= 7.2

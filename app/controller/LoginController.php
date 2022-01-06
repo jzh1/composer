@@ -30,9 +30,10 @@ class LoginController extends BaseController
         $user = new User([]);
         $userData = $user->getUserByName($userName);
         if ($userData && isset($userData['password']) && $userData['password'] == md5($password)){
-            // todo 需要加
-            $token = 'sfafsafsdffdfsfsf';
+
             $authType = 'user';
+            $token = $this->getToken($authType,$userData['user'],$userData['id']);
+
             $this->success(['token'=>$token,'authType'=>$authType],'login success');
         }
 

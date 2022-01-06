@@ -1,6 +1,9 @@
 <?php
 namespace controller;
 
+use service\TokenServices;
+use function Sodium\randombytes_buf;
+
 class BaseController{
 
     protected $twig;
@@ -8,6 +11,8 @@ class BaseController{
     public $getParams = [];
     public $postParams = [];
     public $requestParams = [];
+    // token
+    public $tokenServices;
 
     // 构造方法
     public function __construct()
@@ -16,6 +21,8 @@ class BaseController{
         $this->twig = new \Twig\Environment($loader, [
             // 'cache' => '/path/to/compilation_cache',
         ]);
+
+        $this->tokenServices = new TokenServices();
 
         $this->params();
     }
@@ -73,5 +80,43 @@ class BaseController{
         $this->getParams = $_GET;
         $this->postParams = $_POST;
         $this->requestParams = array_merge($this->getParams,$this->postParams);
+    }
+
+    public function getUserIdByToken($token){
+
+        return $this->tokenServices->getUserIdByToken($token);
+    }
+
+    public function setToken($key,$value){
+        return $this->tokenServices->setToken($key,$value);
+    }
+
+    /**
+     *  生成并且返回token
+     *
+     * @param $type
+     * @param $userName
+     * @param $value
+     * @param string $module
+     * @return string token
+     */
+    public function getToken($type,$userName,$value,$module = 'user:'){
+        $key = $type.'_'.$userName.'_'.time().rand(10000000,999999999);
+        $keyMd5 = md5($key);
+        $this->tokenServices->setToken($module.$keyMd5,$value);
+
+        return $keyMd5;
+    }
+
+    /**
+     * 验证token 是否存在
+     *
+     * @param $key
+     * @param string $module
+     * @return bool
+     */
+    public function checkToken($key,$module = 'user:'){
+
+        return $this->tokenServices->checkToken($module.$key);
     }
 }
