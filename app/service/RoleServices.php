@@ -10,12 +10,13 @@ class RoleServices extends BaseServices
 
     public function checkUrl($urlKeyString)
     {
+        $baseC = new BaseController();
         try {
             // all rout string
             $url    = $_SERVER['REQUEST_URI'];
             $urlArr = explode('/', $url);
             // all token string
-            $authToke = $_SERVER['HTTP_AUTHORIZATION'];
+            $authToke = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
             if ($authToke) {
                 $allToken = explode('_', $authToke);
                 $token    = $allToken[1] ?? '';
@@ -24,7 +25,7 @@ class RoleServices extends BaseServices
             // 验证token
             if (in_array($urlKeyString, $urlArr)) {
                 if (isset($token)) {
-                    $getToke = $this->redisServices->get($token);
+                    $getToke = $baseC->checkToken($token);
                     if ($getToke) {
                         return ;
                     }
@@ -34,7 +35,6 @@ class RoleServices extends BaseServices
                 }
             }
         } catch (\Exception $e) {
-            $baseC = new BaseController();
             $baseC->error('',$e->getMessage());
         }
     }

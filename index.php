@@ -23,7 +23,20 @@ $role->checkUrl($backstage);
 /**
  *  用户
  */
+// 登陆
 Macaw::post('login', 'controller\LoginController@login');
+
+/**
+ *  模块
+ */
+// 获取所有模块
+Macaw::get('modular/list', 'controller\ModularController@getList');
+Macaw::get( $backstage.'/modular/all', 'controller\ModularController@getAll');
+Macaw::post($backstage.'/modular/add', 'controller\ModularController@add');
+Macaw::post($backstage.'/modular/edit', 'controller\ModularController@edit');
+
+
+
 
 
 /**
