@@ -29,7 +29,6 @@ class LoginController extends BaseController
 
         $user = new User([]);
         $userData = $user->getUserByName($userName);
-        dd($userData);
         if ($userData && isset($userData['password']) && $userData['password'] == md5($password)){
 
             $authType = 'user';

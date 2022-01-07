@@ -3,16 +3,9 @@
 
 namespace service;
 
-use  service\RedisServices;
 
 class TokenServices extends BaseServices
 {
-    public $redisServices;
-
-    public function __construct()
-    {
-        $this->redisServices = new RedisServices();
-    }
 
     public function checkToken($key)
     {
@@ -36,7 +29,7 @@ class TokenServices extends BaseServices
         return $this->redisServices->get($token);
     }
 
-    public function generateToken($type)
+    public function generateToken($authType)
     {
 
     }

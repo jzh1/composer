@@ -2,6 +2,7 @@
 require('vendor/autoload.php');
 
 use NoahBuscher\Macaw\Macaw;
+use service\RoleServices;
 
 /*Macaw::get('/', function (){
     echo 'this is /';
@@ -9,15 +10,25 @@ use NoahBuscher\Macaw\Macaw;
 
 
 // 后台路径
-$backstage = 'admin/';
+$backstage = 'admin';
 // 用户管理
-$user = $backstage.'user/';
+$user = $backstage.'/user/';
 // 文章管理
-$user = $backstage.'user/';
+$user = $backstage.'/article/';
 
+// 验证路由
+$role = new RoleServices();
+$role->checkUrl($backstage);
 
+/**
+ *  用户
+ */
 Macaw::post('login', 'controller\LoginController@login');
 
+
+/**
+ * ------------------------------------------------ 以下为测试路由 ------------------------------------------------
+ */
 // 测试
 Macaw::get('test', 'controller\TestController@test');
 // http 请求测试

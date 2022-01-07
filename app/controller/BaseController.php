@@ -2,7 +2,6 @@
 namespace controller;
 
 use service\TokenServices;
-use function Sodium\randombytes_buf;
 
 class BaseController{
 
@@ -94,14 +93,14 @@ class BaseController{
     /**
      *  生成并且返回token
      *
-     * @param $type
+     * @param $authType
      * @param $userName
      * @param $value
      * @param string $module
      * @return string token
      */
-    public function getToken($type,$userName,$value,$module = 'user:'){
-        $key = $type.'_'.$userName.'_'.time().rand(10000000,999999999);
+    public function getToken($authType,$userName,$value,$module = 'user:'){
+        $key = $authType.'_'.$userName.'_'.time().rand(10000000,999999999);
         $keyMd5 = md5($key);
         $this->tokenServices->setToken($module.$keyMd5,$value);
 
