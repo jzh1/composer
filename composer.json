@@ -21,7 +21,8 @@
         "twig/twig": "^3.0",
         "catfan/medoo": "^1.7",
         "guzzlehttp/guzzle": "^7.0",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "symfony/var-dumper": "^5.4"
     },
     "autoload": {
         "psr-4": {
@@ -30,7 +31,8 @@
             "service\\":"app/service"
         },
         "files": [
-            "app/helpers/helpers.php"
+            "app/helpers/helpers.php",
+            "app/helpers/laravel_helpers.php"
         ]
     }
 }
