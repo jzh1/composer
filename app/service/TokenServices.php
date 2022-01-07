@@ -20,7 +20,7 @@ class TokenServices extends BaseServices
     public function setToken($key, $value)
     {
 
-        return $this->redisServices->set($key, $value);
+        return $this->redisServices->set($key, $value,3000);
     }
 
     public function getUserIdByToken($token)

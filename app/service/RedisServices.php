@@ -14,10 +14,10 @@ class RedisServices extends BaseServices
         $this->redis = new Client();
     }
 
-    public function set($key,$value)
+    public function set($key,$value,$expireTTL='3000',$expireResolution='EX')
     {
 
-        return $this->redis->set($key,$value);
+        return $this->redis->set($key,$value,$expireResolution,$expireTTL);
     }
 
     public function get($key)
