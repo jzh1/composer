@@ -25,6 +25,8 @@ $role->checkUrl($backstage);
  */
 // 登陆
 Macaw::post('login', 'controller\LoginController@login');
+// 小程序登陆
+Macaw::post('appletLogin', 'controller\LoginController@appletLogin');
 
 /**
  *  模块
