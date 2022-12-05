@@ -51,3 +51,7 @@ PHP >= 7.2
 ##### 1、代码结构分层 model repository service controller view 
 ##### 2、代码开始运行环境检查，避免运行中因为环境问题运行失败
 ##### 3、返回结构规整
+
+## 四 License
+##### The Laravel framework is open-sourced software licensed under the MIT license.
+https://opensource.org/licenses/MIT
