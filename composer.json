@@ -1,5 +1,5 @@
 {
-    "name": "jzh/composerSimpleFramework",
+    "name": "jzh/composer-simple-framework",
     "description": "The Simple Framework.",
     "keywords": [
         "framework",
@@ -9,7 +9,7 @@
         {
             "name": "zhaohui.jiang",
             "email": "949363409@qq.com",
-            "homepage": "vvup.net",
+            "homepage": "http://vvup.net",
             "role": "Developer"
         }
     ],
@@ -21,15 +21,18 @@
         "twig/twig": "^3.0",
         "catfan/medoo": "^1.7",
         "guzzlehttp/guzzle": "^7.0",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "symfony/var-dumper": "^5.4"
     },
     "autoload": {
         "psr-4": {
             "controller\\":"app/controller",
-            "model\\":"app/model"
+            "model\\":"app/model",
+            "service\\":"app/service"
         },
         "files": [
-            "app/helpers/helpers.php"
+            "app/helpers/helpers.php",
+            "app/helpers/laravel_helpers.php"
         ]
     }
 }

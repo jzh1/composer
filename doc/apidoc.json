@@ -1,0 +1,36 @@
+{
+  "name": "Blog RESTful APIs",
+  "version": "0.1.0",
+  "description": "Blog RESTful 标准API接口文档",
+  "title": "Blog RESTful 接口文档",
+  "url": "blog.vvup.net",
+  "header": {
+    "title": "前言",
+    "filename": "apiHeader.md"
+  },
+  "footer": {
+    "title": "更新说明",
+    "filename": "apiFooter.md"
+  },
+  "apidoc": "0.3.0",
+  "generator": {
+    "name": "Blog",
+    "time": "2021-09-15T09:20:02.292Z",
+    "url": "blog.vvup.net",
+    "version": "0.17.7"
+  },
+  "order": [
+    "Common",
+    "Customer",
+    "CustomerData",
+    "CustomerAddress",
+    "CatalogV2",
+    "CatalogSearch",
+    "Cart",
+    "weStoreCheckout",
+    "Order",
+    "kuaiShou",
+    "CMS",
+    "offlineStore"
+  ]
+}

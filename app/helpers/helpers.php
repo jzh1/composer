@@ -7,7 +7,7 @@ if (!function_exists('array_test')){
     }
 }
 
-if (!function_exists('dd')){
+/*if (!function_exists('dd')){
     function dd(...$args)
     {
         http_response_code(500);
@@ -29,5 +29,5 @@ if (!function_exists('dump')){
             var_dump($x);
         }
     }
-}
+}*/
 
