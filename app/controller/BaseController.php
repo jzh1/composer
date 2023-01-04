@@ -1,6 +1,8 @@
 <?php
 namespace controller;
 
+use model\Config;
+use model\Modular;
 use service\TokenServices;
 
 class BaseController{
@@ -117,5 +119,33 @@ class BaseController{
     public function checkToken($key,$module = 'user:'){
 
         return $this->tokenServices->checkToken($module.$key);
+    }
+
+    /**
+     * 公共参数的string
+     *
+     * @param ...$data
+     * @return void
+     */
+    public function getPublicParams(...$data){
+        foreach ($data as $item){
+            switch ($item){
+                case 'title':
+                    $title = '';
+                    $this->assign('title',$title);
+                break;
+                case 'head':
+                    $headObj = new Config();
+                    $head = $headObj->getAll();
+                    $this->assign('head',$head);
+                break;
+                case 'modular':
+                    $modularObject = new Modular();
+                    $modular = $modularObject->getAll();
+                    $this->assign('modular',$modular);
+                break;
+            }
+
+        }
     }
 }

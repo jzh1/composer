@@ -5,7 +5,7 @@ use Medoo\Medoo;
 
 class BaseDao extends Medoo{
 
-    public function __construct(array $options)
+    public function __construct(array $options = [])
     {
         $options=[
             'database_type' => 'mysql',

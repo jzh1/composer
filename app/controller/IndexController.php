@@ -7,14 +7,26 @@ use model\User;
 class IndexController extends BaseController
 {
 
-    public function test()
+    public function index()
     {
         $user = new User([]);
         $userData = $user->select('users', '*');
         $this->assign('title', '这是index的标题');
         $this->assign('users', $userData);
 
+        $this->getPublicParams('title','head','modular');
+
         $this->display('index/index');
+    }
+
+    public function title()
+    {
+        $user = new User([]);
+        $userData = $user->select('users', '*');
+        $this->assign('title', '这是index的标题');
+        $this->assign('users', $userData);
+
+        $this->display('index/title');
     }
 
     // 获取用户列表

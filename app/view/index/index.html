@@ -4,21 +4,27 @@
     <meta charset="UTF-8">
     <title>{{title}}</title>
 </head>
-<body style="border: 3px solid;margin: 5px;padding: 5px">
+<body>
+<div id="header">
+    <h1>{{head['title']}}</h1>
+</div>
 
+<div id="modular">
+    {{ include('public/modular.html') }}
+</div>
 
+<div id="left"></div>
+<div id="right"></div>
+<div id="footer">{{head['copyright']}}</div>
 
-
-<!--<h1>这是视图模版前端文件</h1>-->
-<!--<h2>{{var}}</h2>-->
-<!--<ul>-->
-<!--    {% for user in users %}-->
-<!--    <li>{{ user.name }}</li>-->
-<!--    {% else %}-->
-<!--    No users have been found.-->
-<!--    {% endfor %}-->
-<!--</ul>-->
-{{ include('public/top.html') }}
-{{ include('public/bottom.html') }}
+<!--{{ include('public/top.html') }}-->
+<!--{{ include('public/modular.html') }}-->
+<!--{{ include('public/left.html') }}-->
+<!--{{ include('public/right.html') }}-->
+<!--{{ include('public/bottom.html') }}-->
 </body>
 </html>
+
+{{ include('css/pubCss.html') }}
+
+
