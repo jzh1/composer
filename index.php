@@ -44,6 +44,7 @@ Macaw::post($backstage.'/modular/edit', 'controller\ModularController@edit');
  */
 // 测试
 Macaw::get('test', 'controller\TestController@test');
+Macaw::get('index/test', 'controller\IndexController@test');
 // http 请求测试
 Macaw::get('httpRequest', 'controller\TestController@httpRequest');
 // 模版文件、数据库链接查询

@@ -14,7 +14,7 @@ class IndexController extends BaseController
         $this->assign('title', '这是index的标题');
         $this->assign('users', $userData);
 
-        $this->display('index');
+        $this->display('index/index');
     }
 
     // 获取用户列表
