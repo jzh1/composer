@@ -1,1 +1,6 @@
-<div id="left" style="border: 3px solid;width: 80em;height: 80em;margin-top: 5px;float:left"></div>
+<ul>
+{% for item in article %}
+<!--<div id="modular-left">-->
+        <div id="left-li"><li><a id="aHrefClass" href="{{ item.href }}">{{ item.created_at }} >> <b>{{ item.title }}</b></a></li></div>
+{% endfor %}
+</ul>

@@ -1,6 +1,7 @@
 <?php
 namespace controller;
 
+use model\Article;
 use model\Config;
 use model\Modular;
 use service\TokenServices;
@@ -130,9 +131,10 @@ class BaseController{
     public function getPublicParams(...$data){
         foreach ($data as $item){
             switch ($item){
-                case 'title':
-                    $title = '';
-                    $this->assign('title',$title);
+                case 'article':
+                    $articleObj = new Article();
+                    $article = $articleObj->getAll();
+                    $this->assign('article',$article);
                 break;
                 case 'head':
                     $headObj = new Config();

@@ -14,7 +14,7 @@ class IndexController extends BaseController
         $this->assign('title', '这是index的标题');
         $this->assign('users', $userData);
 
-        $this->getPublicParams('title','head','modular');
+        $this->getPublicParams('article','head','modular');
 
         $this->display('index/index');
     }
