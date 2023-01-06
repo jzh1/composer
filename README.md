@@ -43,10 +43,38 @@ redis
 
 官方使用介绍地址： https://packagist.org/packages/predis/predis
 
+### ant
+redis
+
+官方使用介绍地址： https://www.yuque.com/ant-design/course/wybhm9
+
+####初始化项目
+node -v
+npm -v
+
+安装cnpm
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+
 ## 二、版本使用限制
 PHP >= 7.2
 
-## 三、优化方向
+mysql >= 8.0
+
+redis
+
+nginx
+
+node
+
+npm
+
+## 三、安装
+php composer install
+ant cnpm install
+
+
+## 四、优化方向
 
 ##### 1、代码结构分层 model repository service controller view 
 ##### 2、代码开始运行环境检查，避免运行中因为环境问题运行失败

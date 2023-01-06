@@ -23,3 +23,6 @@ composer.lock
 package-lock.json
 yarn.lock
 
+app/view/ant/antd-course/node_modules
+app/view/ant/antd-course/dist
+app/view/ant/antd-course/.umi
