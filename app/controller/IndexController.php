@@ -16,7 +16,8 @@ class IndexController extends BaseController
 
         $this->getPublicParams('article','head','modular');
 
-        $this->display('index/index');
+//        $this->display('index/index');
+        $this->display('/layui/index/index');
     }
 
     public function title()
@@ -26,7 +27,8 @@ class IndexController extends BaseController
         $this->assign('title', '这是index的标题');
         $this->assign('users', $userData);
 
-        $this->display('index/title');
+        //$this->display('index/title');
+        $this->display('layui/node_modules/layui/dist/index/index');
     }
 
     // 获取用户列表

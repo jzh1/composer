@@ -71,7 +71,11 @@ npm
 
 ## 三、安装
 php composer install
-ant cnpm install
+
+
+
+## layui
+官方使用介绍地址： https://www.bejson.com/doc/layui/doc/element/layout.html
 
 
 ## 四、优化方向
