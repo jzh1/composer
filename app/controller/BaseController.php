@@ -15,6 +15,8 @@ class BaseController{
     public $requestParams = [];
     // token
     public $tokenServices;
+    // 前端风格
+    public $style = 'layui';
 
     // 构造方法
     public function __construct()
@@ -45,7 +47,13 @@ class BaseController{
         echo $this->twig->render($template.'.html', $this->data);
     }
 
-    // 成功的调用方法
+    /**
+     * 成功的调用方法
+     * 适用与接口
+     * @param $data
+     * @param $message
+     * @return void
+     */
     public function success($data,$message = 'success')
     {
         header('Content-Type:application/json; charset=utf-8');
@@ -61,7 +69,12 @@ class BaseController{
         echo  'error';die();
     }
 
-    // 失败的调用方法
+    /**
+     * 失败的调用方法
+     * @param $data
+     * @param $message
+     * @return void
+     */
     public function error($data,$message)
     {
         header('Content-Type:application/json; charset=utf-8');
@@ -77,7 +90,11 @@ class BaseController{
         die();
     }
 
-    // 获取参数
+    /**
+     * 获取参数
+     * get 和 post 参数组合
+     * @return void
+     */
     public function params(){
         $this->getParams = $_GET;
         $this->postParams = $_POST;

@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>开始使用 layui</title>
-    <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
+    <title>首页</title>
+    {{ include('layui/include/css.html') }}
 </head>
 <body>
 
@@ -12,49 +12,30 @@
 <div class="layui-container">
     常规布局（以中型屏幕桌面为例）：
     <div class="layui-row">
-        <div class="layui-col-md9">
-            你的内容 9/12
+        <div class="layui-col-md3" style="background-color: yellow">
+            {{title}}
         </div>
-        <div class="layui-col-md3">
-            你的内容 3/12
+        <div class="layui-col-md9" style="text-align: right">
+            你的内容 9/12
         </div>
     </div>
 
-    移动设备、平板、桌面端的不同表现：
     <div class="layui-row">
-        <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-            移动：6/12 | 平板：6/12 | 桌面：4/12
-        </div>
-        <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-            移动：6/12 | 平板：6/12 | 桌面：4/12
-        </div>
-        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
-            移动：4/12 | 平板：12/12 | 桌面：4/12
-        </div>
-        <div class="layui-col-xs4 layui-col-sm7 layui-col-md8">
-            移动：4/12 | 平板：7/12 | 桌面：8/12
-        </div>
-        <div class="layui-col-xs4 layui-col-sm5 layui-col-md4">
-            移动：4/12 | 平板：5/12 | 桌面：4/12
+        <div class="layui-col-md12" style="background-color: black;text-align: center;color: azure">
+            这是底部的版权信息
         </div>
     </div>
 </div>
 
+<div class="layui-footer">
+    <!-- 底部固定区域 -->
+    底部固定区域
+</div>
 
 <!-- 引入 layui.js -->
-<script src="https://unpkg.com/layui@2.6.8/dist/layui.js"/>
+{{ include('layui/include/js.html') }}
 <script>
-    layui.define(function(){ // 需确保您的 layui.js 是引入的构建后的版本（即官网下载或 git 平台的发行版）
-                             //直接可得到各种内置模块
-    var layer = layui.layer
-    ,form = layui.form
-    ,table = layui.table;
-
-    //…
-    layer.msg('Hello World');
-
-    exports('index', {}); //注意，这里是模块输出的核心，模块名必须和 use 时的模块名一致
-});
+    layer.msg('hello');
 </script>
 </body>
 </html>

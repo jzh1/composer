@@ -4,12 +4,12 @@ namespace controller;
 
 use model\User;
 
-class IndexController extends BaseController
+class AdminIndexController extends BaseController
 {
 
     public function index()
     {
-        $user = new User([]);
+        $user = new User();
         $userData = $user->select('users', '*');
         $this->assign('title', '这是index的标题');
         $this->assign('users', $userData);
@@ -17,7 +17,7 @@ class IndexController extends BaseController
         $this->getPublicParams('article','head','modular');
 
 //        $this->display('index/index');
-        $this->display($this->style.'/index/index');
+        $this->display($this->style.'/admin/index');
     }
 
     public function title()

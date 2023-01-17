@@ -9,8 +9,8 @@ use service\RoleServices;
 });*/
 
 
-// 后台路径
-$backstage = 'admin';
+// 后台路径 todo 暂时注释不验证
+$backstage = 'admin——test';
 // 用户管理
 $user = $backstage.'/user/';
 // 文章管理
@@ -43,9 +43,15 @@ Macaw::post($backstage.'/modular/edit', 'controller\ModularController@edit');
  * ------------------------------------------------ 以下为测试路由 ------------------------------------------------
  */
 // 测试
+$index = 'index';
+$admin = 'admin';
 Macaw::get('test', 'controller\TestController@test');
-Macaw::get('index/index', 'controller\IndexController@index');
-Macaw::get('index/title', 'controller\IndexController@title');
+Macaw::get($index.'/index', 'controller\IndexController@index');
+Macaw::get($index.'/title', 'controller\IndexController@title');
+
+// 后端路由
+Macaw::get($admin.'/index', 'controller\AdminIndexController@index');
+
 // http 请求测试
 Macaw::get('httpRequest', 'controller\TestController@httpRequest');
 // 模版文件、数据库链接查询
