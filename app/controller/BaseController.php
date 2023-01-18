@@ -162,6 +162,7 @@ class BaseController{
                     $modularObject = new Modular();
                     $modular = $modularObject->getAll();
                     $this->assign('modular',$modular);
+                    $this->assign('modular_left',12 - (count($modular) *2 ));
                 break;
             }
 

@@ -1,41 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>首页</title>
     {{ include('layui/include/css.html') }}
 </head>
-<body>
+<!--#C7EDCC -->
+<body style="font-size: 18px;background-color: #ffffff">
+    <div class="layui-container">
+        <div class="layui-row" style="font-size: 30px;padding: 15px 0px;border-bottom: #9d9d9d solid 1px ">
+            <div class="layui-col-md3"> {{title}}</div>
+            <div class="layui-col-md3"> &nbsp</div>
+            <div class="layui-col-md6">
+                <div class="layui-row" style="font-size: 20px; text-align: center">
+                    <div class="layui-col-md{{modular_left}}"> &nbsp</div>
+                    {% for item in modular %}
+                    <div class="layui-col-md2"><a id="aHrefClass" href="{{ item.href }}">{{ item.name }}</a></div>
+                    {% endfor %}
+                </div>
 
-<!-- 你的 HTML 代码 -->
-<div class="layui-container">
-    常规布局（以中型屏幕桌面为例）：
-    <div class="layui-row">
-        <div class="layui-col-md3" style="background-color: yellow">
-            {{title}}
+            </div>
         </div>
-        <div class="layui-col-md9" style="text-align: right">
-            你的内容 9/12
+
+        <div class="layui-row">
+            <div class="layui-col-md9">
+                {% for item in article %}
+                </br>
+                <a href="{{ item.href }}">
+                    <div class="layui-card layui-panel">
+                        <div class="layui-card-header" style="font-size: 22px; color: #1E9FFF;">  <i class="layui-icon layui-icon-file" style="font-size: 18px; color: #1E9FFF;"></i> {{ item.title }}</div>
+                        <div class="layui-card-body">
+                            <i class="layui-icon layui-icon-date" style="font-size: 18px; color: #1E9FFF;"></i>
+                            <i>{{ item.created_at }} </i>
+                            <i class="layui-icon layui-icon-fire" style="font-size: 18px; color: #1E9FFF;"></i>
+                            <i>{{ item.hot }} </i>
+                            <br>
+
+                            {{ item.introduction }}
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+
+            </div>
+            <div class="layui-col-md3"> &nbsp</div>
+        </div>
+
+        <div id="test1"></div>
+
+        <div class="layui-row">
+            <div class="layui-col-md12" style="background-color: black;text-align: center;color: azure">
+                这是底部的版权信息
+            </div>
         </div>
     </div>
 
-    <div class="layui-row">
-        <div class="layui-col-md12" style="background-color: black;text-align: center;color: azure">
-            这是底部的版权信息
-        </div>
-    </div>
-</div>
 
-<div class="layui-footer">
-    <!-- 底部固定区域 -->
-    底部固定区域
-</div>
+    <!-- 引入 layui.js -->
+    {{ include('layui/include/js.html') }}
+    <script>
+        // layer.msg('hello');
+        layui.use('laypage', function(){
+            var laypage = layui.laypage;
 
-<!-- 引入 layui.js -->
-{{ include('layui/include/js.html') }}
-<script>
-    layer.msg('hello');
-</script>
+            //执行一个laypage实例
+            laypage.render({
+                elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+                ,count: 50 //数据总数，从服务端得到
+            });
+        });
+    </script>
 </body>
 </html>
