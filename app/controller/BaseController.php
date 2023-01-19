@@ -13,6 +13,7 @@ class BaseController{
     public $getParams = [];
     public $postParams = [];
     public $requestParams = [];
+    public $where = [];
     // token
     public $tokenServices;
     // 前端风格
@@ -59,7 +60,9 @@ class BaseController{
         header('Content-Type:application/json; charset=utf-8');
 
         $returnData['code'] = 200;
+        $returnData['count'] = count($data);
         $returnData['message'] = $message;
+        $returnData['msg'] = $message;
         $returnData['data'] = $data;
         if (is_array($returnData)){
             echo  json_encode($returnData,JSON_UNESCAPED_UNICODE);
@@ -150,7 +153,8 @@ class BaseController{
             switch ($item){
                 case 'article':
                     $articleObj = new Article();
-                    $article = $articleObj->getAll();
+                    $modularId = $this->getWhere('modular');
+                    $article = $articleObj->getForModularId($modularId);
                     $this->assign('article',$article);
                 break;
                 case 'head':
@@ -167,5 +171,22 @@ class BaseController{
             }
 
         }
+    }
+
+    public function setWhere($where){
+        $this->where = $where;
+    }
+
+    /**
+     * where 条件
+     * @param $type
+     * @return int|mixed
+     */
+    public function getWhere($type){
+        if (isset($this->where['modular'])){
+            return $this->where['modular'];
+        }
+
+        return false;
     }
 }

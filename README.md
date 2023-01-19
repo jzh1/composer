@@ -76,7 +76,7 @@ php composer install
 
 ## layui
 官方使用介绍地址： https://www.bejson.com/doc/layui/doc/element/layout.html
-
+官方示例地址：https://www.bejson.com/doc/layui/demo/index.html
 
 ## 四、优化方向
 

@@ -11,8 +11,12 @@ class Article extends BaseDao
      *
      * @return array|bool
      */
-    public function getAll()
+    public function getForModularId($modularId = '')
     {
+        if ($modularId){
+            return $this->select($this->table, '*',['modular_id' => $modularId]);
+        }
+
         return $this->select($this->table, '*');
     }
 

@@ -47,6 +47,7 @@ $index = 'index';
 $admin = 'admin';
 Macaw::get('test', 'controller\TestController@test');
 Macaw::get($index.'/index', 'controller\IndexController@index');
+Macaw::get($index.'/test', 'controller\IndexController@test');
 Macaw::get($index.'/title', 'controller\IndexController@title');
 
 // 后端路由
