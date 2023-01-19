@@ -17,4 +17,15 @@ class User extends BaseDao
         return $this->get($this->table, '*', ['name' => $userName]);
     }
 
+
+    /**
+     * 获取 启用的用户信息
+     *
+     * @return array|bool
+     */
+    public function getListByActivity()
+    {
+        return $this->select($this->table, '*',['active' => 1]);
+    }
+
 }

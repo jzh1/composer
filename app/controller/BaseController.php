@@ -4,6 +4,7 @@ namespace controller;
 use model\Article;
 use model\Config;
 use model\Modular;
+use model\User;
 use service\TokenServices;
 
 class BaseController{
@@ -168,6 +169,17 @@ class BaseController{
                     $this->assign('modular',$modular);
                     $this->assign('modular_left',12 - (count($modular) *2 ));
                 break;
+                case 'user':
+                    $modularObject = new User();
+                    $modular = $modularObject->getAll();
+                    $this->assign('modular',$modular);
+                    $this->assign('modular_left',12 - (count($modular) *2 ));
+                break;
+                case 'balderdash':
+                    $articleObj = new Article();
+                    $modularId = $this->getWhere('modular');
+                    $balderdash = $articleObj->getBalderdashForModularId($modularId);
+                    $this->assign('balderdash',$balderdash);
             }
 
         }

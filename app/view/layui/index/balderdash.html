@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>首页</title>
     {{ include('layui/include/css.html') }}
+    {{ include('css/timeLine.html') }}
 </head>
 <!--#C7EDCC -->
 <body style="background-color: #ffffff">
 
-<!--<div class="layui-container">
-    &lt;!&ndash;        导航栏&ndash;&gt;
+<div class="layui-container">
+    <!--        导航栏-->
     <div class="layui-row"
-         style="font-size: 30px;padding: 15px 0px;border-bottom: #9d9d9d solid 1px ;text-align: center; background-color: #ffffff;">
+         style="font-size: 30px;padding: 15px 0px;border-bottom: #9d9d9d solid 1px ; background-color: #ffffff;">
         <div class="layui-col-md3"> {{head.title}}</div>
         <div class="layui-col-md3"> &nbsp</div>
         <div class="layui-col-md6">
@@ -26,140 +27,46 @@
         </div>
     </div>
 
-    &lt;!&ndash;        内容&ndash;&gt;
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <div class="timeline-box shadow">
+                <div class="timeline-main">
+                    <h1><i class="fa fa-clock-o"></i>天地皆宽</h1>
+                    <div class="timeline-line"></div>
 
-    <div class="layui-row" style="padding-top: 20px">
-        <div class="layui-col-md4"> &nbsp</div>
-        <div class="layui-col-md4">
-            <ul class="layui-timeline">
-                {% for item in article %}
-                <li class="layui-timeline-item">
-                    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-                    <div class="layui-timeline-content layui-text">
-                        <h3 class="layui-timeline-title">{{ item.created_at }}</h3>
-
-                        <p>{{ item.title }}：</p>
-                        <p>{{ item.introduction }}</p>
-                    </div>
-                </li>
-                {% endfor %}
-                <li class="layui-timeline-item">
-                    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-                    <div class="layui-timeline-content layui-text">
-                        <div class="layui-timeline-title">过去</div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="layui-col-md4"> &nbsp</div>
-    </div>
-
-</div>-->
-
-<div class="timeline-box shadow">
-    <div class="timeline-main">
-        <h1><i class="fa fa-clock-o"></i>一念之间</h1>
-        <div class="timeline-line"></div>
-        <div class="timeline-year">
-            <h2><a class="yearToggle">2019 年</a><i class="fa fa-caret-down fa-fw"></i></h2>
-            <div class="timeline-month">
-                <ul>
-                    <li>
-                        <div class="h4 animated fadeInLeft">
-                            <p class="date">10月24日</p>
-                        </div>
-                        <p class="dot-circle animated "><i class="fa fa-dot-circle-o"></i></p>
-                        <div class="content animated fadeInRight">
-                            layui 2.0 的一切准备工作似乎都已到位。发布之弦，一触即发。
-                            <br>不枉近百个日日夜夜与之为伴。因小而大，因弱而强。
-                            <br>无论它能走多远，抑或如何支撑？至少我曾倾注全心，无怨无悔 <i class="layui-icon"></i></div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <div class="h4 animated fadeInLeft">
-                            <p class="date">09月06日</p>
-                        </div>
-                        <p class="dot-circle animated "><i class="fa fa-dot-circle-o"></i></p>
-                        <div class="content animated fadeInRight">
-                            <p>杜甫的思想核心是儒家的仁政思想，他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。个人最爱的名篇有：</p>
+                    {% for key,itemList in balderdash %}
+                    <div class="timeline-year">
+                        <h2><a class="yearToggle">{{key}} 年</a><i class="fa fa-caret-down fa-fw"></i></h2>
+                        <div class="timeline-month">
                             <ul>
-                                <li>《登高》</li>
-                                <li>《茅屋为秋风所破歌》</li>
+
+                                {% for item in itemList %}
+                                <li>
+                                    <div class="h4 animated fadeInLeft">
+                                        <p class="date">10月24日</p>
+                                    </div>
+                                    <p class="dot-circle animated "><i class="layui-icon layui-icon-time"></i></p>
+                                    <div class="content animated fadeInRight">
+                                        {{ item.title }}
+                                        <br> {{item.introduction}}</div>
+                                    <div class="clear"></div>
+                                </li>
+                                {% endfor %}
+
                             </ul>
                         </div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <div class="h4 animated fadeInLeft">
-                            <p class="date">08月26日</p>
-                        </div>
-                        <p class="dot-circle animated "><i class="fa fa-dot-circle-o"></i></p>
-                        <div class="content animated fadeInRight">
-                            中国人民抗日战争胜利72周年
-                            <br>常常在想，尽管对这个国家有这样那样的抱怨，但我们的确生在了最好的时代
-                            <br>铭记、感恩
-                            <br>所有为中华民族浴血奋战的英雄将士
-                            <br>永垂不朽
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="timeline-year">
-            <h2><a class="yearToggle">2018 年</a><i class="fa fa-caret-down fa-fw"></i></h2>
-            <div class="timeline-month">
-                <ul>
-                    <li>
-                        <div class="h4 animated fadeInLeft">
-                            <p class="date">10月24日</p>
-                        </div>
-                        <p class="dot-circle animated "><i class="fa fa-dot-circle-o"></i></p>
-                        <div class="content animated fadeInRight">
-                            layui 2.0 的一切准备工作似乎都已到位。发布之弦，一触即发。
-                            <br>不枉近百个日日夜夜与之为伴。因小而大，因弱而强。
-                            <br>无论它能走多远，抑或如何支撑？至少我曾倾注全心，无怨无悔 <i class="layui-icon"></i></div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <div class="h4 animated fadeInLeft">
-                            <p class="date">09月06日</p>
-                        </div>
-                        <p class="dot-circle animated "><i class="fa fa-dot-circle-o"></i></p>
-                        <div class="content animated fadeInRight">
-                            <p>杜甫的思想核心是儒家的仁政思想，他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。个人最爱的名篇有：</p>
-                            <ul>
-                                <li>《登高》</li>
-                                <li>《茅屋为秋风所破歌》</li>
-                            </ul>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <div class="h4 animated fadeInLeft">
-                            <p class="date">08月26日</p>
-                        </div>
-                        <p class="dot-circle animated "><i class="fa fa-dot-circle-o"></i></p>
-                        <div class="content animated fadeInRight">
-                            中国人民抗日战争胜利72周年
-                            <br>常常在想，尽管对这个国家有这样那样的抱怨，但我们的确生在了最好的时代
-                            <br>铭记、感恩
-                            <br>所有为中华民族浴血奋战的英雄将士
-                            <br>永垂不朽
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+                    </div>
+                    {% endfor %}
 
-        <h1 style="padding-top:4px;padding-bottom:2px;margin-top:40px;"><i class="fa fa-hourglass-end"></i>THE END</h1>
+                    <h1 style="padding-top:4px;padding-bottom:2px;margin-top:40px;"><i class="fa fa-hourglass-end"></i>过去不被记忆的，都将逝去;</h1>
+                </div>
+            </div>
+        </div>
     </div>
+
 </div>
-
 
 <!-- 引入 layui.js -->
 {{ include('layui/include/js.html') }}
-{{ include('css/timeLine.html') }}
 </body>
 </html>

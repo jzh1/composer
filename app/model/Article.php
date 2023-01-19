@@ -21,6 +21,24 @@ class Article extends BaseDao
     }
 
     /**
+     * 获取 Balderdash 闲言信息
+     *
+     * @return array|bool
+     */
+    public function getBalderdashForModularId($modularId)
+    {
+        $returnData = [];
+
+        $data = $this->select($this->table, '*',['modular_id' => $modularId]);
+        foreach ($data as $item){
+            $year = substr($item['created_at'],0,4);
+            $returnData[$year][] = $item;
+        }
+
+        return $returnData;
+    }
+
+    /**
      * 获取 启用的 模块信息
      *
      * @return array|bool

@@ -45,10 +45,15 @@ Macaw::post($backstage.'/modular/edit', 'controller\ModularController@edit');
 // 测试
 $index = 'index';
 $admin = 'admin';
-Macaw::get('test', 'controller\TestController@test');
+// 首页
 Macaw::get($index.'/index', 'controller\IndexController@index');
-Macaw::get($index.'/test', 'controller\IndexController@test');
+// 闲言
+Macaw::get($index.'/balderdash', 'controller\IndexController@balderdash');
+// about me
+Macaw::get($index.'/aboutMe', 'controller\IndexController@aboutMe');
+Macaw::get('test', 'controller\TestController@test');
 Macaw::get($index.'/title', 'controller\IndexController@title');
+
 
 // 后端路由
 Macaw::get($admin.'/index', 'controller\AdminIndexController@index');
