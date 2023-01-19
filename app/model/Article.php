@@ -32,6 +32,7 @@ class Article extends BaseDao
         $data = $this->select($this->table, '*',['modular_id' => $modularId]);
         foreach ($data as $item){
             $year = substr($item['created_at'],0,4);
+            $item['md'] = toDateChineseForMD($item['created_at']);
             $returnData[$year][] = $item;
         }
 
