@@ -44,7 +44,7 @@ class IndexController extends BaseController
         $this->setWhere($this->requestParams);
         $this->getPublicParams('article','head','modular');
 
-        $this->display($this->style.'/index/balderdash');
+        $this->display($this->style.'/index/aboutMe');
     }
 
     /**
