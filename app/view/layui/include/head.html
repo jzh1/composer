@@ -1,13 +1,13 @@
 <div class="layui-row"
      style="font-size: 30px;padding: 15px 0px;border-bottom: #9d9d9d solid 1px ; background-color: #ffffff;">
-    <div class="layui-col-md3" style="padding: 5px 0px;"> {{head.title}}</div>
+    <div class="layui-col-md3" style="padding: 5px 0px;"><b>{{head.title}}</b> </div>
     <div class="layui-col-md3"> &nbsp</div>
     <div class="layui-col-md6" style="font-size: 20px;padding: 10px 0px;">
         <div class="layui-row">
             <div class="layui-col-md{{modular_left}}"> &nbsp</div>
             {% for item in modular %}
-            <div class="layui-col-md2" style="text-align: center"><a id="aHrefClass" href="{{ item.href }}">{{ item.name
-                }}</a></div>
+            <div class="layui-col-md2" style="vertical-align: middle"><a id="aHrefClass" href="{{ item.href }}">
+                <b>{{ item.name }}</b></a></div>
             {% endfor %}
         </div>
 

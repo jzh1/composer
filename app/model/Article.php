@@ -7,7 +7,7 @@ class Article extends BaseDao
     private $table = 'article';
 
     /**
-     * 获取所有模块信息
+     * 获取所有模块文章list
      *
      * @return array|bool
      */
@@ -18,6 +18,16 @@ class Article extends BaseDao
         }
 
         return $this->select($this->table, '*');
+    }
+
+    /**
+     * 获取文章信息
+     *
+     * @return array|bool
+     */
+    public function getForId($id)
+    {
+        return $this->get($this->table, '*',['id' => $id]);
     }
 
     /**

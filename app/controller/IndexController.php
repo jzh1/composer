@@ -2,6 +2,7 @@
 
 namespace controller;
 
+use model\Article;
 use model\User;
 
 class IndexController extends BaseController
@@ -45,6 +46,30 @@ class IndexController extends BaseController
         $this->getPublicParams('article','head','modular');
 
         $this->display($this->style.'/index/aboutMe');
+    }
+
+    /**
+     * 文章
+     *
+     * @return void
+     */
+    public function article()
+    {
+        $params = $this->requestParams;
+        if (!isset($params['id'])){
+
+            return;
+        }
+
+        $this->getPublicParams('article','head','modular');
+
+        $article = new Article();
+        $articleInfo = $article->getForId($params['id']);
+        //$articleInfo['content'] = substr($articleInfo['content'],2,strlen($articleInfo['content'])-1);
+        // dd($articleInfo['content']);
+        $this->assign('articleInfo', $articleInfo);
+
+        $this->display($this->style.'/index/article');
     }
 
     /**

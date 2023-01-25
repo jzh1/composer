@@ -45,18 +45,35 @@ Macaw::post($backstage.'/modular/edit', 'controller\ModularController@edit');
 // 测试
 $index = 'index';
 $admin = 'admin';
+/**
+ * 前台页面
+ */
 // 首页
 Macaw::get($index.'/index', 'controller\IndexController@index');
 // 闲言
 Macaw::get($index.'/balderdash', 'controller\IndexController@balderdash');
 // about me
 Macaw::get($index.'/aboutMe', 'controller\IndexController@aboutMe');
+Macaw::get($index.'/article', 'controller\IndexController@article');
+
+/**
+ * 前台接口
+ */
 Macaw::get('test', 'controller\TestController@test');
 Macaw::get($index.'/title', 'controller\IndexController@title');
 
 
-// 后端路由
+/**
+ * 后台页面
+ */
 Macaw::get($admin.'/index', 'controller\AdminIndexController@index');
+Macaw::get($admin.'/articleList', 'controller\AdminIndexController@articleList');
+
+/**
+ * 后台接口
+ */
+Macaw::get($admin.'/articleListData', 'controller\AdminIndexController@articleListData');
+
 
 // http 请求测试
 Macaw::get('httpRequest', 'controller\TestController@httpRequest');
