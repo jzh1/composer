@@ -11,13 +11,35 @@ class Article extends BaseDao
      *
      * @return array|bool
      */
-    public function getForModularId($modularId = '')
+    public function getForModularId($modularId = '',$page = 0,$size = 1000)
     {
         if ($modularId){
-            return $this->select($this->table, '*',['modular_id' => $modularId]);
+            return $this->select($this->table, '*',['modular_id' => $modularId,'LIMIT'=>[$page,$size]]);
         }
 
-        return $this->select($this->table, '*');
+        return $this->select($this->table, '*',['LIMIT'=>[$page,$size]]);
+    }
+    /**
+     * 获取所有模块文章list
+     *
+     * @return array|bool
+     */
+    public function getAll($page = 1,$size = 1000)
+    {
+        $start = ($page - 1) * $size;
+        $end = $page  * $size;
+        return $this->select($this->table, '*',['LIMIT'=>[$start,$end],'ORDER'=>['id'=>'ASC']]);
+    }
+
+    /**
+     * 获取所有模块文章list
+     *
+     * @return array|bool
+     */
+    public function getCount()
+    {
+
+        return $this->count($this->table, '*');
     }
 
     /**

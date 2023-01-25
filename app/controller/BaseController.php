@@ -74,6 +74,29 @@ class BaseController{
     }
 
     /**
+     * 成功的调用方法
+     * 适用与接口
+     * @param $data
+     * @param $message
+     * @return void
+     */
+    public function layuiSuccess($data,$count = '', $message = 'success')
+    {
+        header('Content-Type:application/json; charset=utf-8');
+
+        $returnData['code'] = 0;
+        $returnData['count'] = $count ?? count($data);
+        $returnData['msg'] = $message;
+        $returnData['data'] = $data;
+        if (is_array($returnData)){
+            echo  json_encode($returnData,JSON_UNESCAPED_UNICODE);
+            die();
+        }
+
+        echo  'error';die();
+    }
+
+    /**
      * 失败的调用方法
      * @param $data
      * @param $message
