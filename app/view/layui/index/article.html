@@ -16,12 +16,9 @@
     <!--        内容-->
     <div class="layui-row">
         <div class="layui-col-md12">
-            <p>百度</p>
-            </br>
-<!--            {{articleInfo.content}}-->
-            <template is="wxParse" data="{{articleInfo.content}}"/>
-            <textarea id="content" lay-verify="content" name="content"  >{{articleInfo.content}}</textarea>
+            <div >{{articleInfo.content}}</div>
 
+            <textarea id="demo" style="display: none;"></textarea>
         </div>
     </div>
     <div id="test1"></div>
@@ -34,7 +31,15 @@
 </div>-->
 <!-- 引入 layui.js -->
 {{ include('layui/include/js.html') }}
+<script src="{{js_url}}"></script>
 <script>
+    layui.use('layedit', function(){
+        var layedit = layui.layedit;
+        layedit.build('demo'); //建立编辑器
+    });
+
+    var t = document.getElementById('demo')
+    console.log(t)
 </script>
 </body>
 </html>

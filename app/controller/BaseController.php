@@ -206,6 +206,10 @@ class BaseController{
             }
 
         }
+
+        // js 和 css 引用
+        $this->assign('js_url','http://jzh.composer.test/app/view/layui/include/layui.js');
+        $this->assign('css_url','http://jzh.composer.test/app/view/layui/include/layui.css');
     }
 
     public function setWhere($where){

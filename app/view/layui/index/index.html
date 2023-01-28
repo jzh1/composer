@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>首页</title>
-    {{ include('layui/include/css.html') }}
+<!--    {{ css_url }}-->
+<!--    {{ include('layui/include/css.html') }}-->
+    <link rel="stylesheet" href="{{ css_url }}">
 </head>
 <!--#C7EDCC -->
 <body style="font-size: 18px;background-color: #ffffff">
@@ -38,7 +40,8 @@
             {% endfor %}
 
         </div>
-        <div class="layui-col-md3"> &nbsp</div>
+        <div class="layui-col-md3"> &nbsp
+        </div>
     </div>
     <div id="test1"></div>
 </div>
@@ -49,7 +52,8 @@
     </div>
 </div>-->
 <!-- 引入 layui.js -->
-{{ include('layui/include/js.html') }}
+<!--{{ include('layui/include/js.html') }}-->
+<script src="{{js_url}}"></script>
 <script>
     // layer.msg('hello');
     layui.use('laypage', function () {

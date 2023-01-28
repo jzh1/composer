@@ -34,6 +34,19 @@ class AdminIndexController extends BaseController
         $this->display($this->style.'/admin/articleList');
     }
 
+    public function article()
+    {
+        /*$user = new User();
+        $userData = $user->select('users', '*');
+        $this->assign('title', '这是index的标题');
+        $this->assign('users', $userData);
+
+        $this->getPublicParams('article','head','modular');*/
+
+//        $this->display('index/index');
+        $this->display($this->style.'/admin/article');
+    }
+
     public function articleListData()
     {
         $params = $this->requestParams;

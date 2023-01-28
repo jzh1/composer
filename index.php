@@ -68,6 +68,7 @@ Macaw::get($index.'/title', 'controller\IndexController@title');
  */
 Macaw::get($admin.'/index', 'controller\AdminIndexController@index');
 Macaw::get($admin.'/articleList', 'controller\AdminIndexController@articleList');
+Macaw::get($admin.'/article', 'controller\AdminIndexController@article');
 
 /**
  * 后台接口
